@@ -83,7 +83,6 @@ window.onload = function () {
     아이디: "0",
     링크: "#",
   };
-
   let VISUAL_ARR;
   let visualTag = document.getElementById("data-visual");
 
@@ -91,7 +90,6 @@ window.onload = function () {
   let TODAY_GOOD;
   let todayTag = document.getElementById("data-today");
   let todayTag2 = document.getElementById("data-today2");
-  // console.log(todayTag);
 
   let SALE_GOOD;
   let saleTag = document.getElementById("data-sale");
@@ -107,7 +105,7 @@ window.onload = function () {
   let popularIconTag = document.getElementById("data-popular-icon");
 
   let POPULAR_GOOD;
-  let popularShow = 0; // 목록중 0번을 보여준다.
+  let popularShow = 1; // 목록중 0번을 보여준다.
   let popularTag = document.getElementById("data-popular");
 
   let BANNER_ARR;
@@ -131,22 +129,24 @@ window.onload = function () {
   // 비주얼 화면 출력 기능
   function showVisual() {
     let html = "";
+
     VISUAL_ARR.forEach(function (item) {
-      let tag = `
-      <div class="swiper-slide">
-      <div class="visual-slide-page">
-        <a href="${item.link}">
-          <img src="images/${item.pic}" alt="${item.name}" />
-        </a>
-      </div>
-      </div>
+      const tag = `
+        <div class="swiper-slide">
+          <div class="visual-slide-page">
+            <a href="${item.link}">
+              <img src="images/${item.pic}" alt="${item.name}" />
+            </a>
+          </div>
+        </div>
       `;
       html += tag;
     });
+
     visualTag.innerHTML = html;
 
-    // 비주얼 슬라이드
-    var swVisual = new Swiper(".sw-visual", {
+    // 비주얼 슬라이드 기능
+    const swVisual = new Swiper(".sw-visual", {
       loop: true,
       navigation: {
         prevEl: ".visual-prev",
@@ -161,9 +161,11 @@ window.onload = function () {
         type: "fraction",
       },
     });
+    // 비주얼 슬라이드 멈춤 기능
     const swVisualPlay = document.querySelector(".visual-play");
     swVisualPlay.addEventListener("click", function () {
-      // 현재 active 클래스가 있는지 없는지 판단하고 기능을 설정
+      // 현재 active 클래스가 있는지 없는지 판단하고
+      // 기능을 설정한다.
       if (swVisualPlay.classList.contains("active")) {
         // 새로 시작
         swVisual.autoplay.start();
@@ -174,6 +176,7 @@ window.onload = function () {
       }
     });
   }
+
   // 오늘의 상품 화면 출력 기능
   function showTodayGood() {
     // console.log(TODAY_GOOD);
@@ -279,23 +282,24 @@ window.onload = function () {
     SALE_GOOD.forEach(function (item) {
       let tag = `
       <div class="swiper-slide">
-      <div class="good-box">
-          <!-- 제품이미지 -->
-          <a href="${item.link}" class="good-img">
-            <img src="images/${item.pic}" alt="${item.name}" />
-            <span class="good-type">${item.tag}</span>
-          </a>
-          <!-- 제품정보 -->
-          <a href="${item.link}" class="good-info">
-            <em>${item.name}</em>(<em>${item.unit}</em>)
-          </a>
-          <!-- 제품가격 -->
-          <a href="${item.link}" class="good-info-price">${item.price}<em>원</em></a>
-          <!-- 장바구니 -->
-          <button class="good-add-cart"></button>
-      </div>
+        <div class="good-box">
+            <!-- 제품이미지 -->
+            <a href="${item.link}" class="good-img">
+              <img src="images/${item.pic}" alt="${item.name}" />
+              <span class="good-type">${item.tag}</span>
+            </a>
+            <!-- 제품정보 -->
+            <a href="${item.link}" class="good-info">
+              <em>${item.name}</em>(<em>${item.unit}</em>)
+            </a>
+            <!-- 제품가격 -->
+            <a href="${item.link}" class="good-info-price">${item.price}<em>원</em></a>
+            <!-- 장바구니 -->
+            <button class="good-add-cart"></button>
+        </div>
       </div>
       `;
+
       html += tag;
     });
     html += `
@@ -303,7 +307,7 @@ window.onload = function () {
     </div>
     `;
     saleTag.innerHTML = html;
-    // 슬라이드
+
     const swSale = new Swiper(".sw-sale", {
       slidesPerView: 3,
       spaceBetween: 16,
@@ -358,9 +362,11 @@ window.onload = function () {
     <div class="swiper sw-recommend">
       <div class="swiper-wrapper">
     `;
+
     RECOMMEND_GOOD.forEach(function (item) {
       let tag = `
-        <div class="swiper-slide">
+      <div class="swiper-slide">
+
         <div class="good-box">
           <!-- 제품이미지 -->
           <a href="${item.link}" class="good-img">
@@ -376,16 +382,20 @@ window.onload = function () {
           <!-- 장바구니 -->
           <button class="good-add-cart"></button>
         </div>
-        </div>
+        
+      </div>
       `;
       html += tag;
     });
+
     html += `
       </div>
     </div>
     `;
+
     recommendTag.innerHTML = html;
-    const swSale = new Swiper(".sw-recommend", {
+
+    const swRecommend = new Swiper(".sw-recommend", {
       slidesPerView: 3,
       spaceBetween: 16,
       slidesPerGroup: 3,
@@ -402,20 +412,18 @@ window.onload = function () {
     // 만약에 목록의 개수가 slidesPerView 보다 적으면
     // 1 / 1 출력한다.
     // 0 / 0
-    // .recommend .slide-pg에 글자를 출력
+    // .recommend .slide-pg 글자를 출력
     const sg = document.querySelector(".recommend .slide-pg");
     sg.style.display = "block";
 
     if (RECOMMEND_GOOD.length == 0) {
-      // 0 / 0
       sg.innerHTML = "0/0";
-    } else if (RECOMMEND_GOOD.length < 3) {
-      // 1 / 1
+    } else if (RECOMMEND_GOOD.length < swRecommend.params.slidesPerView) {
       sg.innerHTML = "1/1";
     }
   }
   // 인기 상품 아이콘 출력 기능
-  function showPopularIcon() {
+  function showPopularIconGood() {
     let html = `
     <div class="swiper sw-icon">
       <div class="swiper-wrapper">
@@ -426,7 +434,7 @@ window.onload = function () {
       <div class="swiper-slide">
         <a href="${item.link}">
           <span
-            class="popular-cate-icon"
+            class="popular-cate-icon"              
             style="
               background: url('images/${item.icon}') no-repeat;
               background-position: 0px 0px;
@@ -439,39 +447,43 @@ window.onload = function () {
 
       html += tag;
     });
+
     html += `
       </div>
     </div>
   `;
-    // html 이 화면에 배치되어야 찾을 수 있다.
+
+    // html 이 화면에 배치하고 나야 js로 참조할 수있다.
     popularIconTag.innerHTML = html;
+
     const swIcon = new Swiper(".sw-icon", {
       slidesPerView: 7,
       slidesPerGroup: 7,
       spaceBetween: 10,
       navigation: {
+        nextEl: ".popular-slide-next",
         prevEl: ".popular-slide-prev",
-        nextEl: ".popular-slide-next"
-      }
+      },
     });
+
     // html 에 배치가 되었으면 찾을 수 있다.
-    // a 태그 14개를 찾아야하는데 그래서
-    // querySelector 가 아닌 querySelectorAll 이용함
-    // querySelectorAll 은 배열, 즉 [] 을 리턴한다.
+    // a 태그 14개를 찾아야 하는데 그래서
+    // querySelector 가 아닌 querySelectorAll 이용함.
+    // querySelectorAll 은 배열 즉 [] 를 리턴한다.
     const tag = document.querySelectorAll(".popular-slide a");
     // 찾아서 저장을 한 배열의 각 a 태그에 기능을 준다.
-    // forEach 가 기본 for 문 보다 적용하기 수월하다.
-    tag.forEach(function (item) {
+    // forEach 가 for 문 보다 적용하기가 수월하다.
+    tag.forEach(function (item, index) {
       // 현재 item 에는 a 태그가 하나씩 순차적으로 대입된다.
-      // mouseover 및 mouseout 을 콜백 적용한다.
+      // mouserover, mouseouter 을 콜백 적용한다.
       item.addEventListener("mouseover", function () {
-        // a 태그 내부의 아이콘 클래스, 즉 popular-cate-icon 을 찾는다.
+        // a 태그의 내부의 아이콘 클래스 즉, popular-cate-icon 찾는다.
         const spanTag = this.querySelector(".popular-cate-icon");
         // style 변경한다.
         spanTag.style.backgroundPositionY = "-64px";
       });
       item.addEventListener("mouseout", function () {
-        // a 태그 내부의 아이콘 클래스, 즉 popular-cate-icon 을 찾는다.
+        // a 태그의 내부의 아이콘 클래스 즉, popular-cate-icon 찾는다.
         const spanTag = this.querySelector(".popular-cate-icon");
         // style 변경한다.
         spanTag.style.backgroundPositionY = "0px";
@@ -479,17 +491,20 @@ window.onload = function () {
 
       // 클릭을 하면 버튼(.popular-more) 의 글자를
       // 클릭된 타이틀의 글자로 변경한다.
-      item.addEventListener("click", function(){
-        // a 태그 이므로 href 가 적용된다.
-        // 웹브라우저가 갱신되므로 UI를 위해서 막아야 한다.
+      item.addEventListener("click", function (event) {
+        // a 태그이므로 href 가 적용된다.
+        // 웹브라우저 갱신되므로 UI를 위해서 막아야 한다.
         event.preventDefault();
         const bt = document.querySelector(".popular-more");
         const title = this.querySelector(".popular-cate-name");
-        console.log(title.innerHTML);
-
-        // bt.innerHTML = title.innerHTML + " 물품 더보기";
+        bt.innerHTML = title.innerHTML + " 물품 더보기";
         bt.innerHTML = `${title.innerHTML} 물품 더보기`;
-      })
+
+        // 하단의 목록을 갱신한다.
+        // 현재 클릭된 번호를 popularShow 에 담는다.
+        popularShow = index;
+        showPopularGood();
+      });
     });
   }
   // 인기 상품 화면 출력 기능
@@ -519,65 +534,67 @@ window.onload = function () {
     popularTag.innerHTML = html;
   }
   // 배너 화면 출력 기능
-  function showBannerArr() {
+  function showBanner() {
     let html = `
     <div class="swiper sw-banner">
       <div class="swiper-wrapper">
     `;
     BANNER_ARR.forEach(function (item) {
-      let tag = `
-      <div class="swiper-slide">
-      <a href="${item.link}">
-      <img src="images/${item.pic}" alt="${item.title}" />
-      </a>
+      const tag = `   
+      <div class="swiper-slide">   
+        <a href="${item.link}">
+          <img src="images/${item.image}" alt="${item.title}" />
+        </a>
       </div>
       `;
       html += tag;
     });
     html += `
-    </div>
+      </div>
     </div>
     `;
+
     bannerTag.innerHTML = html;
-    var swiper = new Swiper(".sw-banner", {
-      slidesPerView: 2,
-      spaceBetween: 0,
+
+    const swBanner = new Swiper(".sw-banner", {
       loop: true,
-      navigation: {
-        prevEl: ".banner-slide-prev",
-        nextEl: ".banner-slide-next",
-      },
       autoplay: {
         delay: 2500,
         disableOnInteraction: false,
       },
+      slidesPerView: 2,
+      spaceBetween: 0,
+      navigation: {
+        prevEl: ".banner-slide-prev",
+        nextEl: ".banner-slide-next",
+      },
     });
   }
   // 브랜드 화면 출력 기능
-  function showBrandArr() {
+  function showBrand() {
     let html = `
     <div class="swiper sw-brand">
       <div class="swiper-wrapper">
     `;
     BRAND_ARR.forEach(function (item) {
-      let tag = `
+      const tag = `      
       <div class="swiper-slide">
-      <div class="brand-box">
-      <a href="${item.link}">
-        <img src="images/${item.pic}" alt="${item.title}" />
-        <p>${item.title}</p>
-        <ul class="brand-info clearfix">
-          <li>
-            <span class="brand-info-title">${item.list1title}</span>
-            <span class="brand-info-value">${item.list1value}톤 ↓</span>
-          </li>
-          <li>
-            <span class="brand-info-title">${item.list2title}</span>
-            <span class="brand-info-value">${item.list2value}그루 ↑</span>
-          </li>
-        </ul>
-      </a>
-      </div>
+        <div class="brand-box">
+          <a href="${item.link}">
+            <img src="images/${item.image}" alt="${item.id}" />
+            <p>${item.title}</p>
+            <ul class="brand-info clearfix">
+              <li>
+                <span class="brand-info-title">${item.infotitle}</span>
+                <span class="brand-info-title-value">${item.infovalue}</span>
+              </li>
+              <li>
+                <span class="brand-info-title">${item.infotitle2}</span>
+                <span class="brand-info-title-value">${item.infovalue2}</span>
+              </li>
+            </ul>
+          </a>
+        </div>        
       </div>
       `;
       html += tag;
@@ -586,8 +603,10 @@ window.onload = function () {
       </div>
     </div>
     `;
+
     brandTag.innerHTML = html;
-    const swSale = new Swiper(".sw-brand", {
+
+    const swBrand = new Swiper(".sw-brand", {
       slidesPerView: 3,
       spaceBetween: 16,
       slidesPerGroup: 3,
@@ -601,43 +620,40 @@ window.onload = function () {
       },
     });
   }
-  // 이용후기 화면 출력 기능
-  function showReviewArr() {
+  // 리뷰 화면 출력 기능
+  function showReview() {
     let html = `
     <div class="swiper sw-review">
       <div class="swiper-wrapper">
     `;
+    // 데이터 처리
     REVIEW_ARR.forEach(function (item) {
-      let tag = `
+      const tag = `
       <div class="swiper-slide">
-      <div class="review-box">
-      <a href="${item.link}">
-        <div class="review-box-desc">
-          <span class="review-box-title">
-          ${item.title}
-          </span>
-          <span class="review-box-star"> ${item.star} </span>
-          <span class="review-box-img">
-            <img src="images/${item.pic}" alt="${item.title}" />
-          </span>
+        <div class="review-box">
+          <a href="${item.link}">
+            <div class="review-box-desc">
+              <span class="review-box-title">
+              ${item.title}
+              </span>
+              <span class="review-box-star"> ${item.star + ""} </span>
+              <span class="review-box-img">
+                <img src="images/${item.pic}" alt="${item.title}" />
+              </span>
+            </div>
+            <p class="review-box-txt">
+            ${item.txt}
+            </p>
+            <span class="review-box-user"> ${item.user} ( ${item.shop} ) </span>
+          </a>
         </div>
-        <p class="review-box-txt">
-        ${item.txt}
-        </p>
-        <span class="review-box-user"> ${item.user} (${item.shop}) </span>
-      </a>
-      </div>
       </div>
       `;
       html += tag;
     });
-    html += `
-      </div>
-    </div>
-    `;
     reviewTag.innerHTML = html;
-    // 슬라이드
-    const swSale = new Swiper(".sw-review", {
+
+    const swReview = new Swiper(".sw-review", {
       slidesPerView: 3,
       spaceBetween: 16,
       slidesPerGroup: 3,
@@ -654,13 +670,14 @@ window.onload = function () {
   // 공지사항 화면 출력 기능
   function showNotice() {
     let html = "";
+    // 데이터 갱신
     NOTICE_ARR.forEach(function (item) {
-      let tag = `
-      <li>
-      <a href="${item.link}">
-        <span>${item.title}</span><em>${item.date}</em>
-      </a>
-      </li>
+      const tag = `
+        <li>
+          <a href="${item.link}">
+            <span>${item.title}</span><em>${item.date}</em>
+          </a>
+        </li>
       `;
       html += tag;
     });
@@ -669,49 +686,126 @@ window.onload = function () {
   // 물품소식 화면 출력 기능
   function showGoodNews() {
     let html = "";
+    // 데이터 처리
     GOODNEWS_ARR.forEach(function (item) {
-      let tag = `
+      const tag = `
       <li>
-      <a href="${item.link}">
-        <span>${item.title}</span><em>${item.date}</em>
-      </a>
+        <a href="${item.link}">
+          <span>${item.title}</span><em>${item.date}</em>
+        </a>
       </li>
       `;
       html += tag;
     });
+
     goodNewsTag.innerHTML = html;
   }
-  // 시즌목록 화면 출력 기능
+
+  // 시즌 화면 출력기능
+  const buyTotal = document.getElementById("buy-total");
+  const buyTotalMoney = document.getElementById("buy-total-money");
+  let buyTotalCount = 0;
+  let buyTotalMoneyPrice = 0;
+
   function showSeason() {
     let html = "";
     SEASON_ARR.forEach(function (item, index) {
-      let tag = `
+      const tag = `
       <li>
-      <div class="season-good clearfix">
-        <input
-          type="checkbox"
-          id="ch${index}"
-          class="season-good-check"
-          checked
-        />
-        <label for="ch${index}" class="season-label"> ${item.title} </label>
-
-        <a href="${item.link}" class="season-good-img">
-          <img src="images/${item.pic}" alt="${item.title}" />
-        </a>
-        <p class="season-good-info">
-          <a href="#" class="season-good-title"
-            >${item.title}</a
-          >
-          <a href="${item.link}" class="season-good-price"
-            ><em>${item.price}</em>원</a>
-        </p>
-      </div>
+        <div class="season-good clearfix">
+          <input
+            type="checkbox"
+            id="ch${index}"
+            class="season-good-check season-item"
+            checked
+            value=${item.price}
+          />
+          <label for="ch${index}" class="season-label"> ${item.title} </label>
+          <a href="${item.link}" class="season-good-img">
+            <img src="images/${item.pic}" alt="${item.title}" />
+          </a>
+          <p class="season-good-info">
+            <a href="${item.link}" class="season-good-title">${item.title}</a>
+            <a href="${item.link}" class="season-good-price"><em>${item.price}</em>원</a>
+          </p>
+        </div>
       </li>
       `;
       html += tag;
     });
     seasonTag.innerHTML = html;
+
+    // Smooth Scrollbar 적용
+    Scrollbar.initAll();
+    // 체크박스 각각의 기능
+    checkBoxFn();
+    // 계산 출력한다.
+    showBuyGood();
+  }
+
+  // 전체 체크박스 기능
+  const chkAll = document.getElementById("chall");
+  chkAll.addEventListener("change", function () {
+    const chkArr = document.querySelectorAll(".season-item");
+    if (chkAll.checked) {
+      // 전체 체크를 해야 하는 경우
+      chkArr.forEach(function (item) {
+        item.checked = true;
+      });
+    } else {
+      // 전체 체크를 해제 해야 하는 경우
+      chkArr.forEach(function (item) {
+        item.checked = false;
+      });
+    }
+    showBuyGood();
+  });
+
+  // 체크박스 각각의 기능
+  function checkBoxFn() {
+    const chkArr = document.querySelectorAll(".season-item");
+    chkArr.forEach(function (item) {
+      item.addEventListener("change", function () {
+        // 가격을 다시 계산한다.
+        showBuyGood();
+      });
+    });
+  }
+
+  // 계산 출력 기능
+  function showBuyGood() {
+    // 체크가 된 카운팅을 한다. 그리고 더한다.
+    let count = 0;
+    let priceTotal = 0;
+    const chkArr = document.querySelectorAll(".season-item");
+    chkArr.forEach(function (item) {
+      const state = item.checked;
+      if (state) {
+        // count = count + 1;
+        count += 1;
+        // count ++;
+
+        // 글자를 정수 숫자로 변경함
+        const price = parseInt(item.value);
+        // const price = item.value * 1;
+        priceTotal += price;
+      }
+    });
+
+    buyTotalCount = count;
+    buyTotalMoneyPrice = priceTotal;
+
+    buyTotal.innerHTML = buyTotalCount;
+    buyTotalMoney.innerHTML = buyTotalMoneyPrice;
+
+    // 전체 선택 버튼 해제
+    if(buyTotalCount === chkArr.length) {
+      // 전체 체크 버튼 checked 되어야 함
+      chkAll.checked = true;
+    }else {
+      // 전체 체크 버튼 checked 해제되어야 함
+      chkAll.checked = false;
+    }
   }
 
   // data.json 을 로딩
@@ -738,8 +832,10 @@ window.onload = function () {
       SALE_GOOD = obj.salegood;
       NEW_GOOD = obj.newgood;
       RECOMMEND_GOOD = obj.recommendgood;
+
       POPULAR_ICON = obj.popularicon;
       POPULAR_GOOD = obj.populargood;
+
       BANNER_ARR = obj.banner;
       BRAND_ARR = obj.brand;
       REVIEW_ARR = obj.review;
@@ -747,7 +843,7 @@ window.onload = function () {
       GOODNEWS_ARR = obj.goodnews;
       SEASON_ARR = obj.season;
 
-      // 비주얼을 화면에 배치한다.
+      // 비주얼 화면에 배치한다.
       showVisual();
       // 오늘의 상품을 화면에 배치한다.
       showTodayGood();
@@ -757,27 +853,104 @@ window.onload = function () {
       showNewGood();
       // 추천 상품을 화면에 배치한다.
       showRecommendGood();
-      // 인기 상품 아이콘을 화면에 배치한다.
-      showPopularIcon();
+      // 인기 아이콘을 화면에 배치한다.
+      showPopularIconGood();
       // 인기 상품을 화면에 배치한다.
       showPopularGood();
-      // 배너를 화면에 배치한다.
-      showBannerArr();
-      // 브랜드를 화면에 배치한다.
-      showBrandArr();
-      // 이용후기를 화면에 배치한다.
-      showReviewArr();
-      // 공지사항을 화면에 배치한다.
+      // 배너목록을 화면에 배치한다.
+      showBanner();
+      // 브랜드목록을 화면에 배치한다.
+      showBrand();
+      // 리뷰목록을 화면에 배치한다.
+      showReview();
+      // 공지사항목록을 화면에 배치한다.
       showNotice();
-      // 물품소식을 화면에 배치한다.
+      // 물품소식목록을 화면에 배치한다.
       showGoodNews();
-      // 시즌목록을 화면에 배치한다.
+      // 시즌 목록을 화면에 배치한다.
       showSeason();
     }
   };
 
   // 자료를 호출한다.
+  console.log("자료를 가져온다. XMLHT...");
   xhttp.open("GET", "data.json");
   // 웹브라우저 기능 실행 요청
   xhttp.send();
+
+  // 커뮤니티 탭 메뉴
+  // 탭 버튼
+  const tabBtArr = document.querySelectorAll(".community-bt");
+  // 탭 내용
+  const tabConArr = document.querySelectorAll(".community-notice dd");
+  console.log(tabBtArr, tabConArr);
+  // 탭 포커스
+  let tabFocusIndex = 0;
+  // 탭 버튼 클릭 처리
+  tabBtArr.forEach(function (item, index) {
+    item.addEventListener("click", function () {
+      tabFocusIndex = index;
+      tabFocusFn();
+    });
+  });
+  // 탭 포커스 함수를 생성
+  function tabFocusFn() {
+    // 포커스 css 를 적용 및 제거
+    // 일단 모두 제거
+    tabBtArr.forEach(function (item) {
+      item.classList.remove("community-bt-active");
+    });
+    // 인덱스에 해당하는 것만 적용.
+    tabBtArr[tabFocusIndex].classList.add("community-bt-active");
+    // 내용에서 일단 모두 제거
+    tabConArr.forEach(function (item) {
+      item.classList.remove("community-visible-active");
+    });
+    tabConArr[tabFocusIndex].classList.add("community-visible-active");
+  }
+  // 스크롤시 상단 고정 클래스 추가/제거
+  const wrap = document.querySelector(".wrap");
+  const header = document.querySelector(".header");
+  let scy = 0;
+  window.addEventListener("scroll", function () {
+    const scy = this.document.documentElement.scrollTop;
+    if (scy > 0) {
+      wrap.classList.add("active");
+      header.classList.add("active");
+    } else {
+      wrap.classList.remove("active");
+      header.classList.remove("active");
+    }
+  });
+  // 하단 패밀리 펼침 기능
+  // 목록 열기 버튼
+  const openBt = document.querySelector(".footer-link");
+  // 목록 닫기 버튼
+  const closeBt = document.querySelector(".family-close");
+  // 보여질 목록
+  const family = document.querySelector(".family");
+  // 스크롤바를 안생기게 하려고 처리
+  const community = document.querySelector(".community");
+  // 기능 처리
+  openBt.addEventListener("click", function () {
+    family.classList.add("active");
+    this.classList.add("active");
+    community.classList.add("active");
+  });
+  closeBt.addEventListener("click", function () {
+    family.classList.remove("active");
+    openBt.classList.remove("active");
+    community.classList.remove("active");
+  });
+
+  // niceScroll 적용
+  // const sgl = $(".season-good-list");
+  // sgl.niceScroll({
+  //   cursorwidth: "8px",
+  //   cursoropacitymax: 0.5,
+  // });
+
+  // sgl.mouseover(function () {
+  //   sgl.getNiceScroll().resize();
+  // });
 };

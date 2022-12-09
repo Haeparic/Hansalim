@@ -108,13 +108,21 @@
       referrerpolicy="no-referrer"
     ></script>
 
-    <!-- Swiper JS -->
+    <!-- Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <!-- Link Swiper's CSS -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
+
+    <!-- niceScroll : jQuery 연결되어야 한다. -->
+    <!-- <script src="js/jquery.nicescroll.min.js"></script> -->
+
+    <!-- Smooth Scrollbar -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.8.1/smooth-scrollbar.js"
+    integrity="sha512-yn9N2uBs4OocMUaJ9wZK6ELv+qXIULoRa7IvOsGz2wqWQRt8mNqU1L2I9Fau24PPxEKlGxuEDkRKvsanwAWUYw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="js/script.js"></script>
   </head>
@@ -261,7 +269,7 @@
           <!-- 비주얼 슬라이드 -->
           <div class="swiper sw-visual">
             <div class="swiper-wrapper" id="data-visual">
-              <!-- 데이터 출력 -->
+              <!-- 데이터출력 -->
             </div>
           </div>
         </div>
@@ -312,6 +320,7 @@
               <div class="good-slide" id="data-sale">
                 <!-- 외부데이터연동 -->
               </div>
+              <!--// 알뜰상품 슬라이드  -->
             </div>
           </div>
         </div>
@@ -347,7 +356,7 @@
               </h2>
               <p class="section-title-txt">찬바람 불 때 뜨끈한 국수 한 그릇</p>
               <div class="slide-control">
-                <div class="slide-pg"></div>
+                <div class="slide-pg">1/4</div>
                 <button class="slide-prev">이전</button>
                 <button class="slide-next">다음</button>
               </div>
@@ -374,7 +383,7 @@
               <span>이전</span>
             </div>
             <div class="popular-slide" id="data-popular-icon">
-              <!-- 데이터 출력 -->
+              <!-- 데이터출력 -->
             </div>
             <div class="popular-slide-next">
               <span>다음</span>
@@ -382,66 +391,7 @@
           </div>
           <!-- 인기물품 목록 -->
           <div class="good-wrap no-mb" id="data-popular">
-            <div class="good-box">
-              <!-- 제품이미지 -->
-              <a href="#" class="good-img">
-                <img src="images/good.jpg" alt="제품" />
-                <span class="good-type">인기</span>
-              </a>
-              <!-- 제품정보 -->
-              <a href="#" class="good-info">
-                <em>깐양파</em>(<em>2-3개입</em>)
-              </a>
-              <!-- 제품가격 -->
-              <a href="#" class="good-info-price">5,000<em>원</em></a>
-              <!-- 장바구니 -->
-              <button class="good-add-cart"></button>
-            </div>
-            <div class="good-box">
-              <!-- 제품이미지 -->
-              <a href="#" class="good-img">
-                <img src="images/good.jpg" alt="제품" />
-                <span class="good-type">인기</span>
-              </a>
-              <!-- 제품정보 -->
-              <a href="#" class="good-info">
-                <em>깐양파</em>(<em>2-3개입</em>)
-              </a>
-              <!-- 제품가격 -->
-              <a href="#" class="good-info-price">5,000<em>원</em></a>
-              <!-- 장바구니 -->
-              <button class="good-add-cart"></button>
-            </div>
-            <div class="good-box">
-              <!-- 제품이미지 -->
-              <a href="#" class="good-img">
-                <img src="images/good.jpg" alt="제품" />
-                <span class="good-type">인기</span>
-              </a>
-              <!-- 제품정보 -->
-              <a href="#" class="good-info">
-                <em>깐양파</em>(<em>2-3개입</em>)
-              </a>
-              <!-- 제품가격 -->
-              <a href="#" class="good-info-price">5,000<em>원</em></a>
-              <!-- 장바구니 -->
-              <button class="good-add-cart"></button>
-            </div>
-            <div class="good-box">
-              <!-- 제품이미지 -->
-              <a href="#" class="good-img">
-                <img src="images/good.jpg" alt="제품" />
-                <span class="good-type">인기</span>
-              </a>
-              <!-- 제품정보 -->
-              <a href="#" class="good-info">
-                <em>깐양파</em>(<em>2-3개입</em>)
-              </a>
-              <!-- 제품가격 -->
-              <a href="#" class="good-info-price">5,000<em>원</em></a>
-              <!-- 장바구니 -->
-              <button class="good-add-cart"></button>
-            </div>
+            <!-- 데이터출력 -->
           </div>
           <!--// 인기물품 목록 -->
         </div>
@@ -462,7 +412,7 @@
               </p>
               <a href="#" class="section-bt">더보기</a>
               <div class="slide-control">
-                <div class="slide-pg"></div>
+                <div class="slide-pg">1/4</div>
                 <button class="slide-prev">이전</button>
                 <button class="slide-next">다음</button>
               </div>
@@ -506,8 +456,8 @@
             </div>
             <div class="season-right">
               <div class="season-list">
-                <ul class="season-good-list" id="data-season">
-                  <!-- 데이터 출력 -->
+                <ul class="season-good-list" id="data-season" data-scrollbar>
+                  <!-- 데이터출력 -->
                 </ul>
               </div>
               <div class="season-total">
@@ -520,10 +470,10 @@
                   />
                   <label for="chall" class="season-label"> 라벨 </label>
 
-                  전체 선택 <em>3</em>개
+                  전체 선택 <em id="buy-total">3</em>개
                 </div>
                 <a href="#" class="buy-good">
-                  총 <em>50,000</em>원 바구니 담기
+                  총 <em id="buy-total-money">50,000</em>원 바구니 담기
                 </a>
               </div>
             </div>
@@ -545,7 +495,7 @@
               </p>
 
               <div class="slide-control">
-                <div class="slide-pg"></div>
+                <div class="slide-pg">1/4</div>
                 <button class="slide-prev">이전</button>
                 <button class="slide-next">다음</button>
               </div>
@@ -570,6 +520,7 @@
                   공지사항
                 </button>
               </dt>
+
               <dd class="community-visible-active">
                 <ul class="notice-list" id="data-notice">
                   <!-- 데이터 출력 -->
@@ -577,9 +528,10 @@
               </dd>
 
               <dt><button class="community-bt">물품소식</button></dt>
+
               <dd>
                 <ul class="notice-list" id="data-goodnews">
-                  <!-- 데이터 출력 -->
+                  <!-- 데이터처리 -->
                 </ul>
               </dd>
             </dl>
@@ -617,6 +569,76 @@
       </section>
       <!-- 하단 -->
       <footer class="footer">
+        <div class="family-box">
+          <div class="family">
+            <div class="container">
+              <ul class="family-list">
+                <li>
+                  <p class="family-title">한살림 가족</p>
+                  <ul class="family-area">
+                    <li><a href="#">한살림연합</a></li>
+                    <li><a href="#">한살림생산자연합회</a></li>
+                    <li><a href="#">한살림연합 식생활센터</a></li>
+                    <li><a href="#">한살림재단</a></li>
+                    <li><a href="#">한살림펀딩</a></li>
+                    <li><a href="#">한살림연수원</a></li>
+                    <li><a href="#">한살림햇빛발전협동조합</a></li>
+                    <li><a href="#">모심과살림연구소</a></li>
+                    <li><a href="#">도서출판한살림</a></li>
+                    <li><a href="#">한살림참여인증</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p class="family-title">서울/경기</p>
+                  <ul class="family-area">
+                    <li><a href="#">한살림서울</a></li>
+                    <li><a href="#">한살림고양파주</a></li>
+                    <li><a href="#">한살림경기남부</a></li>
+                    <li><a href="#">한살림성남용인</a></li>
+                    <li><a href="#">한살림경기서남부</a></li>
+                    <li><a href="#">한살림경기동부</a></li>
+                    <li><a href="#">한살림수원</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p class="family-title">강원/충청</p>
+                  <ul class="family-area">
+                    <li><a href="#">한살림원주</a></li>
+                    <li><a href="#">한살림춘천</a></li>
+                    <li><a href="#">한살림강원영동</a></li>
+                    <li><a href="#">한살림청주</a></li>
+                    <li><a href="#">한살림대전</a></li>
+                    <li><a href="#">한살림천안아산</a></li>
+                    <li><a href="#">한살림충주제천</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p class="family-title">전라/경상</p>
+                  <ul class="family-area">
+                    <li><a href="#">한살림전북</a></li>
+                    <li><a href="#">한살림광주</a></li>
+                    <li><a href="#">한살림전남남부</a></li>
+                    <li><a href="#">한살림경북북부</a></li>
+                    <li><a href="#">한살림경북서부</a></li>
+                    <li><a href="#">한살림울산</a></li>
+                    <li><a href="#">한살림경남</a></li>
+                    <li><a href="#">한살림대구</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p class="family-title">경상/제주</p>
+                  <ul class="family-area">
+                    <li><a href="#">한살림부산</a></li>
+                    <li><a href="#">한살림경주</a></li>
+                    <li><a href="#">한살림경북동부</a></li>
+                    <li><a href="#">한살림제주</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <button class="family-close"><span>닫기</span></button>
+            </div>
+          </div>
+        </div>
         <div class="footer-top">
           <div class="container clearfix">
             <ul class="footer-menu clearfix">
@@ -633,7 +655,6 @@
             </button>
           </div>
         </div>
-
         <div class="footer-main">
           <div class="container clearfix">
             <div class="footer-copy">

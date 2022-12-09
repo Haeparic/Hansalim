@@ -22,7 +22,7 @@
       "link": "#"
     },
     {
-      "name": "콩콩크림빵",
+      "name": "콩콩크림빵2",
       "unit": "1개",
       "price": 1500,
       "tag": "인기",
@@ -31,7 +31,7 @@
       "link": "#"
     },
     {
-      "name": "콩콩크림빵",
+      "name": "콩콩크림빵3",
       "unit": "1개",
       "price": 1500,
       "tag": "인기",
@@ -40,7 +40,7 @@
       "link": "#"
     },
     {
-      "name": "콩콩크림빵",
+      "name": "콩콩크림빵4",
       "unit": "1개",
       "price": 1500,
       "tag": "인기",
@@ -49,7 +49,7 @@
       "link": "#"
     },
     {
-      "name": "콩콩크림빵",
+      "name": "콩콩크림빵5",
       "unit": "1개",
       "price": 1500,
       "tag": "인기",
@@ -58,7 +58,7 @@
       "link": "#"
     },
     {
-      "name": "콩콩크림빵",
+      "name": "콩콩크림빵6",
       "unit": "1개",
       "price": 1500,
       "tag": "인기",
@@ -67,7 +67,7 @@
       "link": "#"
     },
     {
-      "name": "콩콩크림빵",
+      "name": "콩콩크림빵7",
       "unit": "1개",
       "price": 1500,
       "tag": "인기",
@@ -76,7 +76,7 @@
       "link": "#"
     },
     {
-      "name": "콩콩크림빵",
+      "name": "콩콩크림빵8",
       "unit": "1개",
       "price": 1500,
       "tag": "인기",
@@ -161,39 +161,39 @@
   ],
   "newgood": [
     {
-      "pic": "new_1.jpg",
-      "id": "0",
       "title": "조리가 간편하고 부드러운 맛을 내는 '장국된장'",
       "txt": "밀가루 없이 국산 무농약 감자와 감자전분으로만 만든 옹심이",
-      "link": "#"
+      "link": "#",
+      "pic": "new_1.jpg",
+      "id": "0"
     },
     {
-      "pic": "new_2.jpg",
-      "id": "1",
       "title": "따로 육수 낼 필요 없이 진한 국물 ‘만능우동간장’",
       "txt": "",
-      "link": "#"
+      "link": "#",
+      "pic": "new_2.jpg",
+      "id": "1"
     },
     {
-      "pic": "new_3.jpg",
-      "id": "2",
       "title": "부드러운 남도 미역에 전복과 성게알을 더해 끓인 ‘전복성게미역국’",
       "txt": "",
-      "link": "#"
+      "link": "#",
+      "pic": "new_3.jpg",
+      "id": "2"
     },
     {
-      "pic": "new_4.jpg",
-      "id": "3",
       "title": "우리 땅에서 자란 친환경 사과를 부드럽게 갈아 만든 ‘꼬마와땅 사과퓨레’",
       "txt": "",
-      "link": "#"
+      "link": "#",
+      "pic": "new_4.jpg",
+      "id": "3"
     },
     {
-      "pic": "new_5.jpg",
-      "id": "4",
       "title": "조리가 간편하고 부드러운 맛을 내는 '장국된장'",
       "txt": "",
-      "link": "#"
+      "link": "#",
+      "pic": "new_5.jpg",
+      "id": "4"
     }
   ],
   "recommendgood": [
@@ -271,90 +271,90 @@
     }
   ],
   "popularicon": [
-  {
-    "id": "icon-1",
-    "icon": "icon_1.png",
-    "txt": "쌀/잡곡",
-    "link": "#"
-  },
-  {
-    "id": "icon-2",
-    "icon": "icon_2.png",
-    "txt": "채소/배섯",
-    "link": "#"
-  },
-  {
-    "id": "icon-3",
-    "icon": "icon_3.png",
-    "txt": "과일/견과",
-    "link": "#"
-  },
-  {
-    "id": "icon-4",
-    "icon": "icon_4.png",
-    "txt": "축산/축산가공",
-    "link": "#"
-  },
-  {
-    "id": "icon-5",
-    "icon": "icon_5.png",
-    "txt": "수산/수산가공",
-    "link": "#"
-  },
-  {
-    "id": "icon-6",
-    "icon": "icon_6.png",
-    "txt": "반찬/양념/가루",
-    "link": "#"
-  },
-  {
-    "id": "icon-7",
-    "icon": "icon_7.png",
-    "txt": "식사대용/간편식",
-    "link": "#"
-  },
-  {
-    "id": "icon-8",
-    "icon": "icon_8.png",
-    "txt": "간식/음료/유제품",
-    "link": "#"
-  },
-  {
-    "id": "icon-9",
-    "icon": "icon_9.png",
-    "txt": "건강/차",
-    "link": "#"
-  },
-  {
-    "id": "icon-10",
-    "icon": "icon_10.png",
-    "txt": "화장품/오가닉코튼",
-    "link": "#"
-  },
-  {
-    "id": "icon-11",
-    "icon": "icon_11.png",
-    "txt": "주방/욕실/세정",
-    "link": "#"
-  },
-  {
-    "id": "icon-12",
-    "icon": "icon_12.png",
-    "txt": "휴지/생활",
-    "link": "#"
-  },
-  {
-    "id": "icon-13",
-    "icon": "icon_13.png",
-    "txt": "반려동물",
-    "link": "#"
-  },
-  {
-    "id": "icon-14",
-    "icon": "icon_14.png",
-    "txt": "대용량/어린이집",
-    "link": "#"
-  }
+    {
+      "id": "icon-1",
+      "icon": "icon_1.png",
+      "txt": "쌀/잡곡",
+      "link": "#"
+    },
+    {
+      "id": "icon-2",
+      "icon": "icon_2.png",
+      "txt": "채소/버섯",
+      "link": "#"
+    },
+    {
+      "id": "icon-3",
+      "icon": "icon_3.png",
+      "txt": "과일/견과",
+      "link": "#"
+    },
+    {
+      "id": "icon-4",
+      "icon": "icon_4.png",
+      "txt": "축산/축산가공",
+      "link": "#"
+    },
+    {
+      "id": "icon-5",
+      "icon": "icon_5.png",
+      "txt": "수산/수산가공",
+      "link": "#"
+    },
+    {
+      "id": "icon-6",
+      "icon": "icon_6.png",
+      "txt": "반찬/양념/가루",
+      "link": "#"
+    },
+    {
+      "id": "icon-7",
+      "icon": "icon_7.png",
+      "txt": "식사대용/간편식",
+      "link": "#"
+    },
+    {
+      "id": "icon-8",
+      "icon": "icon_8.png",
+      "txt": "간식/음료/유제품",
+      "link": "#"
+    },
+    {
+      "id": "icon-9",
+      "icon": "icon_9.png",
+      "txt": "건강/차",
+      "link": "#"
+    },
+    {
+      "id": "icon-10",
+      "icon": "icon_10.png",
+      "txt": "화장품/오가닉코튼",
+      "link": "#"
+    },
+    {
+      "id": "icon-11",
+      "icon": "icon_11.png",
+      "txt": "주방/욕실/세정",
+      "link": "#"
+    },
+    {
+      "id": "icon-12",
+      "icon": "icon_12.png",
+      "txt": "휴지/생활",
+      "link": "#"
+    },
+    {
+      "id": "icon-13",
+      "icon": "icon_13.png",
+      "txt": "반려동물",
+      "link": "#"
+    },
+    {
+      "id": "icon-14",
+      "icon": "icon_14.png",
+      "txt": "대용량/어린이집",
+      "link": "#"
+    }
   ],
   "populargood": {
     "populargood-1": [
@@ -433,41 +433,161 @@
         "link": "#"
       }
     ],
-    "populargood-3": [],
-    "populargood-4": [],
-    "populargood-5": [],
-    "populargood-6": [],
-    "populargood-7": [],
-    "populargood-8": [],
-    "populargood-9": [],
-    "populargood-10": [],
-    "populargood-11": [],
-    "populargood-12": [],
-    "populargood-13": [],
-    "populargood-14": []
+    "populargood-3": [
+      {
+        "name": "222",
+        "unit": "1개",
+        "price": 1500,
+        "tag": "인기",
+        "pic": "good_3.jpg",
+        "id": "0",
+        "link": "#"
+      }
+    ],
+    "populargood-4": [
+      {
+        "name": "222",
+        "unit": "1개",
+        "price": 1500,
+        "tag": "인기",
+        "pic": "good_4.jpg",
+        "id": "0",
+        "link": "#"
+      }
+    ],
+    "populargood-5": [
+      {
+        "name": "222",
+        "unit": "1개",
+        "price": 1500,
+        "tag": "인기",
+        "pic": "good_5.jpg",
+        "id": "0",
+        "link": "#"
+      }
+    ],
+    "populargood-6": [
+      {
+        "name": "222",
+        "unit": "1개",
+        "price": 1500,
+        "tag": "인기",
+        "pic": "good_6.jpg",
+        "id": "0",
+        "link": "#"
+      }
+    ],
+    "populargood-7": [
+      {
+        "name": "222",
+        "unit": "1개",
+        "price": 1500,
+        "tag": "인기",
+        "pic": "good_7.jpg",
+        "id": "0",
+        "link": "#"
+      }
+    ],
+    "populargood-8": [
+      {
+        "name": "222",
+        "unit": "1개",
+        "price": 1500,
+        "tag": "인기",
+        "pic": "good_8.jpg",
+        "id": "0",
+        "link": "#"
+      }
+    ],
+    "populargood-9": [
+      {
+        "name": "222",
+        "unit": "1개",
+        "price": 1500,
+        "tag": "인기",
+        "pic": "good_1.jpg",
+        "id": "0",
+        "link": "#"
+      }
+    ],
+    "populargood-10": [
+      {
+        "name": "222",
+        "unit": "1개",
+        "price": 1500,
+        "tag": "인기",
+        "pic": "good_2.jpg",
+        "id": "0",
+        "link": "#"
+      }
+    ],
+    "populargood-11": [
+      {
+        "name": "222",
+        "unit": "1개",
+        "price": 1500,
+        "tag": "인기",
+        "pic": "good_3.jpg",
+        "id": "0",
+        "link": "#"
+      }
+    ],
+    "populargood-12": [
+      {
+        "name": "222",
+        "unit": "1개",
+        "price": 1500,
+        "tag": "인기",
+        "pic": "good_4.jpg",
+        "id": "0",
+        "link": "#"
+      }
+    ],
+    "populargood-13": [
+      {
+        "name": "222",
+        "unit": "1개",
+        "price": 1500,
+        "tag": "인기",
+        "pic": "good_5.jpg",
+        "id": "0",
+        "link": "#"
+      }
+    ],
+    "populargood-14": [
+      {
+        "name": "222",
+        "unit": "1개",
+        "price": 1500,
+        "tag": "인기",
+        "pic": "good_6.jpg",
+        "id": "0",
+        "link": "#"
+      }
+    ]
   },
   "banner": [
     {
       "link": "#",
-      "pic": "banner_1.jpg",
+      "image": "banner_1.jpg",
       "id": "banner1",
       "title": "배너1"
     },
     {
       "link": "#",
-      "pic": "banner_2.jpg",
+      "image": "banner_2.jpg",
       "id": "banner2",
       "title": "배너2"
     },
     {
       "link": "#",
-      "pic": "banner_3.jpg",
+      "image": "banner_3.jpg",
       "id": "banner3",
       "title": "배너3"
     },
     {
       "link": "#",
-      "pic": "banner_4.jpg",
+      "image": "banner_4.jpg",
       "id": "banner4",
       "title": "배너4"
     }
@@ -475,63 +595,63 @@
   "brand": [
     {
       "link": "#",
-      "pic": "brand_1.png",
+      "image": "brand_1.png",
+      "id": "브랜드",
+      "title": "참여인증",
+      "infotitle": "참여공동체",
+      "infovalue": "51곳",
+      "infotitle2": "재배면적",
+      "infovalue2": "9,441,668m²"
+    },
+    {
+      "link": "#",
+      "image": "brand_2.png",
+      "id": "브랜드",
       "title": "병재사용",
-      "list1title": "온실가스",
-      "list1value": "105.1",
-      "list2title": "소나무",
-      "list2value": "8866",
-      "id": "brand1"
+      "infotitle": "온실가스",
+      "infovalue": "105.1톤",
+      "infotitle2": "소나무",
+      "infovalue2": "866그루 ↑"
     },
     {
       "link": "#",
-      "pic": "brand_2.png",
-      "title": "병재사용2",
-      "list1title": "온실가스",
-      "list1value": "105.1",
-      "list2title": "소나무",
-      "list2value": "8866",
-      "id": "brand2"
+      "image": "brand_3.png",
+      "id": "브랜드",
+      "title": "토박이씨앗살림",
+      "infotitle": "생산량",
+      "infovalue": "253,693kg",
+      "infotitle2": "재배면적",
+      "infovalue2": "72만m²"
     },
     {
       "link": "#",
-      "pic": "brand_3.png",
-      "title": "병재사용3",
-      "list1title": "온실가스",
-      "list1value": "105.1",
-      "list2title": "소나무",
-      "list2value": "8866",
-      "id": "brand3"
+      "image": "brand_4.png",
+      "id": "브랜드",
+      "title": "우리보리살림",
+      "infotitle": "사육 두수",
+      "infovalue": "16,000두",
+      "infotitle2": "보리농지면적",
+      "infovalue2": "800,000m²"
     },
     {
       "link": "#",
-      "pic": "brand_4.png",
-      "title": "병재사용4",
-      "list1title": "온실가스",
-      "list1value": "105.1",
-      "list2title": "소나무",
-      "list2value": "8866",
-      "id": "brand4"
+      "image": "brand_5.png",
+      "id": "브랜드",
+      "title": "가까운 먹을거리",
+      "infotitle": "온실가스",
+      "infovalue": "1,640톤 ↓",
+      "infotitle2": "소나무",
+      "infovalue2": "248,561그루 ↑"
     },
     {
       "link": "#",
-      "pic": "brand_5.png",
-      "title": "병재사용5",
-      "list1title": "온실가스",
-      "list1value": "105.1",
-      "list2title": "소나무",
-      "list2value": "8866",
-      "id": "brand5"
-    },
-    {
-      "link": "#",
-      "pic": "brand_6.png",
-      "title": "병재사용6",
-      "list1title": "온실가스",
-      "list1value": "105.1",
-      "list2title": "소나무",
-      "list2value": "8866",
-      "id": "brand6"
+      "image": "brand_6.png",
+      "id": "브랜드",
+      "title": "우리밀 살리기",
+      "infotitle": "공급량",
+      "infovalue": "1,436,129kg",
+      "infotitle2": "온실가스",
+      "infovalue2": "5,055톤 ↓"
     }
   ],
   "review": [
@@ -548,7 +668,7 @@
     {
       "id": "r2",
       "link": "#",
-      "star": "5.0",
+      "star": "4.0",
       "title": "두부면(100g)",
       "txt": "면이 부드러워져서 더 맛있어졌어요. 전에는 표면이 까끌해서 식감이 안좋았는데 부드럽게 바껴서 넘 좋아요!",
       "user": "윤*아",
@@ -558,9 +678,9 @@
     {
       "id": "r3",
       "link": "#",
-      "star": "4.0",
+      "star": "5.0",
       "title": "오징어채(200g)",
-      "txt": "다좋은데  가격이  좀비싸 별하나뺐어요 좀저렴하면 자주 사먹겠어요",
+      "txt": "다좋은데  가격이  좀비싸 별하나뺐어요  좀저렴하면 자주 사먹겠어요",
       "user": "윤*아",
       "shop": "한살림서울",
       "pic": "review_3.jpg"
@@ -568,7 +688,7 @@
     {
       "id": "r4",
       "link": "#",
-      "star": "5.0",
+      "star": "4.0",
       "title": "발효어성초 세안비누(1장)",
       "txt": "여드름 피부에 좋은것 같아요.. 이거로 세수하고 어성초 스킨으로 마무리하니 더 안심이예요..",
       "user": "윤*아",
@@ -578,7 +698,7 @@
     {
       "id": "r5",
       "link": "#",
-      "star": "5.0",
+      "star": "4.0",
       "title": "쌀쉬폰(270g)/매장",
       "txt": "식구 모두 좋아하는 빵~ 맛있습니다 부드러운 식감~ 굿 ？？ 잘 애용 합니다",
       "user": "윤*아",
