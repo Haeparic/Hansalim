@@ -1,4 +1,7 @@
 window.onload = function () {
+  function priceToString(price) {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
   // 펼침목록들 보기 기능
   {
     const menuBt = document.getElementById("menu-bt");
@@ -232,7 +235,7 @@ window.onload = function () {
               <em>${item.name}</em>(<em>${item.unit}</em>)
             </a>
             <!-- 제품가격 -->
-            <a href="${item.link}" class="good-info-price">${item.price}<em>원</em></a>
+            <a href="${item.link}" class="good-info-price">${priceToString(item.price)}<em>원</em></a>
             <!-- 장바구니 -->
             <button class="good-add-cart"></button>
         </div>
@@ -261,7 +264,9 @@ window.onload = function () {
             <em>${item.name}</em>(<em>${item.unit}</em>)
           </a>
           <!-- 제품가격 -->
-          <a href="${item.link}" class="good-info-price">${item.price}<em>원</em></a>
+          <a href="${item.link}" class="good-info-price">${priceToString(
+        item.price
+      )}<em>원</em></a>
           <!-- 장바구니 -->
           <button class="good-add-cart"></button>
       </div>
@@ -293,7 +298,7 @@ window.onload = function () {
               <em>${item.name}</em>(<em>${item.unit}</em>)
             </a>
             <!-- 제품가격 -->
-            <a href="${item.link}" class="good-info-price">${item.price}<em>원</em></a>
+            <a href="${item.link}" class="good-info-price">${priceToString(item.price)}<em>원</em></a>
             <!-- 장바구니 -->
             <button class="good-add-cart"></button>
         </div>
@@ -378,7 +383,7 @@ window.onload = function () {
             <em>${item.name}</em>(<em>${item.unit}</em>)
           </a>
           <!-- 제품가격 -->
-          <a href="${item.link}" class="good-info-price">${item.price}<em>원</em></a>
+          <a href="${item.link}" class="good-info-price">${priceToString(item.price)}<em>원</em></a>
           <!-- 장바구니 -->
           <button class="good-add-cart"></button>
         </div>
@@ -524,7 +529,7 @@ window.onload = function () {
             <em>${item.name}</em>(<em>${item.unit}</em>)
           </a>
           <!-- 제품가격 -->
-          <a href="${item.link}" class="good-info-price">${item.price}<em>원</em></a>
+          <a href="${item.link}" class="good-info-price">${priceToString(item.price)}<em>원</em></a>
           <!-- 장바구니 -->
           <button class="good-add-cart"></button>
         </div>
@@ -726,7 +731,7 @@ window.onload = function () {
           </a>
           <p class="season-good-info">
             <a href="${item.link}" class="season-good-title">${item.title}</a>
-            <a href="${item.link}" class="season-good-price"><em>${item.price}</em>원</a>
+            <a href="${item.link}" class="season-good-price"><em>${priceToString(item.price)}</em>원</a>
           </p>
         </div>
       </li>
@@ -796,13 +801,13 @@ window.onload = function () {
     buyTotalMoneyPrice = priceTotal;
 
     buyTotal.innerHTML = buyTotalCount;
-    buyTotalMoney.innerHTML = buyTotalMoneyPrice;
+    buyTotalMoney.innerHTML = priceToString(buyTotalMoneyPrice);
 
     // 전체 선택 버튼 해제
-    if(buyTotalCount === chkArr.length) {
+    if (buyTotalCount === chkArr.length) {
       // 전체 체크 버튼 checked 되어야 함
       chkAll.checked = true;
-    }else {
+    } else {
       // 전체 체크 버튼 checked 해제되어야 함
       chkAll.checked = false;
     }
@@ -953,4 +958,33 @@ window.onload = function () {
   // sgl.mouseover(function () {
   //   sgl.getNiceScroll().resize();
   // });
+
+  // 전체 메뉴 펼침 기능
+  const allMenuArea = document.querySelector(".all-menu-area");
+  const allMenu = document.querySelector(".all-menu");
+  const cateList = document.querySelector(".cate-list");
+  const themeList = document.querySelector(".theme-list");
+  allMenuArea.addEventListener("mouseleave", function () {
+    allMenu.classList.remove("active");
+  });
+  cateList.addEventListener("mouseenter", function () {
+    allMenu.classList.add("active");
+  });
+  themeList.addEventListener("mouseenter", function () {
+    allMenu.classList.remove("active");
+  });
+
+  // 서브 카테고리 보여주기
+  const cateListLis = document.querySelectorAll(".cate-list > li");
+  const cateDepth2 = document.querySelectorAll(".cate-depth2-list");
+  cateListLis.forEach(function (item, index) {
+    item.addEventListener("mouseenter", function () {
+      cateDepth2.forEach(function (itemSub, indexSub) {
+        itemSub.style.display = "none";
+        if (indexSub === index) {
+          itemSub.style.display = "block";
+        }
+      });
+    });
+  });
 };

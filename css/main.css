@@ -516,7 +516,8 @@ body {
 }
 .gnb {
   position: relative;
-  display: block;
+  display: inline-block;
+  margin-left: 130px;
 }
 .gnb > li {
   position: relative;
@@ -566,6 +567,194 @@ body {
   display: inline-block;
   margin-right: 12px;
 }
+
+/* 전체메뉴 */
+.all-menu-area {
+  position: absolute;
+  left: 0;
+  top: 12px;
+  display: inline-block;
+  height: 43px;
+}
+.all-menu {
+  position: absolute;
+  left: 0;
+  top: 41px;
+  width: 210px;
+  height: 0;
+  visibility: hidden;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+  overflow: hidden;
+  transition: width 0.5s;
+}
+.all-menu-area:hover .all-menu {
+  height: calc(100vh - 105px - 128px);
+  visibility: visible;
+}
+.all-menu.active {
+  width: 420px !important;
+}
+.all-menu-cate {
+  position: relative;
+  display: block;
+  width: 210px;
+  height: calc(100vh - 105px - 128px);
+  background: #fff;
+  overflow: auto;
+}
+.cate-list {
+  position: relative;
+}
+.cate-list > li {
+  position: relative;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 40px;
+}
+.cate-list > li > a {
+  position: relative;
+  display: block;
+  padding: 0px 24px;
+}
+.cate-list > li > a::after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: calc(50% - 5px);
+  width: 6px;
+  height: 10px;
+  display: none;
+  background: url(../images/icoGnbArr1.png) no-repeat 0 -10px;
+}
+.cate-list > li > a:hover {
+  background: #f9f9f9;
+  color: #76bd42;
+}
+.cate-list > li > a:hover::after {
+  display: block;
+}
+.theme-list {
+}
+.theme-list > li {
+  position: relative;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 40px;
+}
+.theme-list > li::after {
+  content: "";
+  position: absolute;
+  left: 24px;
+  bottom: 0;
+  display: block;
+  width: calc(100% - 24px - 24px);
+  height: 1px;
+  background: #e9e9e9;
+}
+.theme-list > li:first-child::before {
+  content: "";
+  position: absolute;
+  left: 24px;
+  top: 0;
+  display: block;
+  width: calc(100% - 24px - 24px);
+  height: 1px;
+  background: #666;
+}
+.theme-list > li:last-child::after {
+  content: "";
+  position: absolute;
+  left: 24px;
+  bottom: 0;
+  display: block;
+  width: calc(100% - 24px - 24px);
+  height: 1px;
+  background: #666;
+}
+.theme-list > li > a {
+  position: relative;
+  display: block;
+  padding: 0 24px;
+}
+.theme-list > li > a::after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: calc(50% - 5px);
+  width: 6px;
+  height: 10px;
+  background: url(../images/icoGnbArr1.png) no-repeat 0 0;
+}
+.theme-list > li > a:hover {
+  color: #76bd42;
+}
+.theme-list > li > a:hover::after {
+  background-position: 0px -10px;
+}
+.theme-list > li > a > span {
+  position: relative;
+  display: inline-block;
+}
+.theme-list .ball::after {
+  top: 10px;
+}
+.deli-list {
+}
+.deli-list > li {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 30px;
+}
+.deli-list > li > a {
+  position: relative;
+  display: block;
+  padding: 0 24px;
+  color: #666;
+}
+.deli-list > li > a:hover {
+  color: #76bd42;
+}
+.deli-list > li > a::after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: calc(50% - 5px);
+  width: 6px;
+  height: 10px;
+  background: url(../images/icoGnbArr1.png) no-repeat 0 0;
+}
+.deli-list > li > a:hover::after {
+  background-position: 0 -10px;
+}
+.all-menu-cate-wrap {
+  position: absolute;
+  left: 210px;
+  top: 0;
+  width: 210px;
+}
+.cate-depth2-list {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  width: 100%;
+  padding: 0 24px;
+}
+.cate-depth2-list > li {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 40px;
+}
+.cate-depth2-list > li > a {
+}
+.cate-depth2-list > li > a:hover {
+  color: #76bd42;
+  text-decoration: underline;
+}
+/* // 전체메뉴 */
+
 .join-bt {
   position: relative;
   display: block;
